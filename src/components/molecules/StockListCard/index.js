@@ -3,10 +3,9 @@ import {StyleSheet, Text, View} from 'react-native';
 import {StyledText} from '../../atoms';
 import {STRINGS} from '../../../constants/string';
 import {SCREEN_PADDING, FONT_SIZE, COLORS} from '../../../constants';
-import {formatAmount, calculatePNL} from '../../../utils';
+import {formatAmount, calculatePNL, isPositiveOrNegative} from '../../../utils';
 
 const StockListCard = ({item}) => {
-  // console.log('Item', item);
   return (
     <View style={styles.container}>
       <Item
@@ -20,6 +19,7 @@ const StockListCard = ({item}) => {
 };
 
 const Item = ({symbol, quantity, ltp, avgPrice}) => {
+  const pl = formatAmount(calculatePNL({quantity, ltp, avgPrice}));
   return (
     <View style={styles.itemContainer}>
       <View style={styles.rowSpaceBetween}>
@@ -36,9 +36,13 @@ const Item = ({symbol, quantity, ltp, avgPrice}) => {
         <StyledText textStyle={styles.pl}>
           {STRINGS.P_AND_L}
           <Text style={styles.value}>
-            {` ${STRINGS.RUPEE} ${formatAmount(
-              calculatePNL({quantity, ltp, avgPrice}),
-            )}` || ''}
+            {` ${STRINGS.RUPEE} `}
+            <Text
+              style={{
+                color: isPositiveOrNegative(pl) ? COLORS.RED : COLORS.GREEN,
+              }}>
+              {`${pl}` || ''}
+            </Text>
           </Text>
         </StyledText>
       </View>

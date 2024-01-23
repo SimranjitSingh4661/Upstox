@@ -5,6 +5,12 @@ export function formatAmount(input) {
   return number.toFixed(2);
 }
 
+//Function to check number is positive or nevitive
+export function isPositiveOrNegative(numberString) {
+  const number = parseFloat(numberString);
+  return number > 0 ? true : false;
+}
+
 // Function to calculate P&L for each holding
 export function calculatePNL(holding) {
   return holding.ltp * holding.quantity - holding.avgPrice * holding.quantity;
