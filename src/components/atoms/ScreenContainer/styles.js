@@ -3,7 +3,7 @@ import {COLORS, SCREEN_PADDING} from '../../../constants';
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: COLORS.WHITE,
+    backgroundColor: COLORS.PRIMARY_BG,
   },
   paddingH: {paddingHorizontal: SCREEN_PADDING},
 });

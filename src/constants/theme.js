@@ -9,6 +9,7 @@ export const COLORS = {
   PRIMARY: '#0D0D0D',
   TEXT_GREY: '#757575',
   BORDER_RED: '#A90808',
+  PRIMARY_BG: '#c7c7cc',
   BORDER_GREY: '#a3a0a0',
   BUTTON_COLOR: '#263245',
   TEXT_GREY_LIGHT: '#6a6a6a',

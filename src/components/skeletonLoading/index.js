@@ -1,2 +1,2 @@
-export {default as UserCardLoading} from './UserCardloading';
-export {default as UserDetailCardLoading} from './UserDetailCardLoading';
+export {default as StockListCardLoading} from './StockListCardLoading';
+export {default as HoldingFooterLoading} from './HoldingFooterLoading';
